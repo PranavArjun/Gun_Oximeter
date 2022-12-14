@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+    
+</head>
+
+
+<body>
+
+    <div class="container ">
+        <!-- <div class="climatebox">
+        <div class="climate" id="greenhouse" style="color:#F54B61;"><div class="circle">{{variable}}</div><div class= "description"><b>Temperature</b></div></div>
+        <div class="climate" id="coolhouse" style="color:#0087BE;"><div class="circle">{{variable}}</div><div class= "description"><b>Oxygen</b></div></div>
+        <div class="climate" id="treehouse" style="color:#00AEAE;"><div class="circle">18°</div><div class= "description"><b>Treehouse</b></div></div>
+        </div> -->
+        <div class="row">
+            
+            <div class="offset-lg-2 col-lg-8 col-sm-8 col-8 border rounded main-section my-4">
+                <h3 class="text-center text-inverse my-3">Gun Oximeter</h3>
+                <hr>
+                <div class="climatebox">
+                    <div class="climate" id="greenhouse" style="color:#F54B61;"><div class="circle">{{variable}} °C</div><div class= "description"><b>Temperature</b></div></div>
+                    <div class="climate" id="coolhouse" style="color:#0087BE;"><div class="circle">{{variable2}} %</div><div class= "description"><b>Oxygen</b></div></div>
+                </div>
+                <form class="container" id="needs-validation" action="" method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="row my-2">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name" id="name"
+                                placeholder="Enter your full Name">
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-md-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label class="text-inverse" for="phone">Phone No.</label>
+                                <input type="phone" name="phone" class="form-control" id="phone" placeholder="Phone No."
+                                    required>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label class="text-inverse" for="date">Date</label>
+                                <input type="date" name="date" class="form-control" id="date" placeholder="Date"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-lg-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label class="text-inverse" for="city">City</label>
+                                <input type="text" name="city" class="form-control" id="city" placeholder="City"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label class="text-inverse" for="areaName">Area Name</label>
+                                <input type="text" name="areaName" class="form-control" id="areaName"
+                                    placeholder="Area Name" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-12 my-2">
+                            <div class="form-group">
+                                <label class="text-inverse" for="age">Age</label>
+                                <input type="number" name="age" class="form-control" id="age" placeholder="Age"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-12 my-2">
+                            <div class="form-group">
+                                <label class="text-inverse" for="vact">Vaccination Status</label>
+                                <select class="custom-select d-block form-control" name="vact" id="vact" required>
+                                    <option value="">-</option>
+                                    <option value="1st Dose completed">1st Dose completed</option>
+                                    <option value="Fully vaccinated">Fully vaccinated</option>
+                                    <option value="Not vaccinated">Not vaccinated</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please selected any option.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label class="text-inverse" for="temp">Temperature</label>
+                                <div>
+                                    {{variable}}
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label class="text-inverse" for="spo2">Spo2</label>
+                                <div>
+                                    {{variable2}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-12 text-center mb-3">
+                            <button type="submit" class="btn btn-primary">Submit Form</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
